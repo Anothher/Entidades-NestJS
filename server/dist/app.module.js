@@ -26,8 +26,8 @@ exports.AppModule = AppModule = __decorate([
                 entities: [
                     categoryFilm_entity_1.CategoryFilm
                 ],
-                synchronize: true,
-            }),
+                synchronize: false,
+            })
         ],
         controllers: [],
         providers: [],

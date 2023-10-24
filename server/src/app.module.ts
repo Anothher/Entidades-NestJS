@@ -1,5 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule } from '@nestjs/config';
+import config from './config';
+import * as Joi from 'joi';
 import { ProfileModule } from './profile/profile.module';
 import { ProfileEntity } from './profile/entity/profile.entity';
 import { CategoryEntity } from './category/entity/category.entity';
@@ -19,12 +22,9 @@ import { CategoryFilm } from './categoryFilm/entity/categoryFilm.entity';
       username: 'root',
       password: '',
       database: 'prueba',
-      entities: [
-      CategoryFilm
-      ],
-      synchronize: true,
-    }),
-    
+      entities: [],
+      synchronize: false,
+    })
   ],
   controllers: [],
   providers: [],

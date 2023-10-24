@@ -4,7 +4,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 export class RolEntity {
 
     @PrimaryGeneratedColumn({
-        name: 'codRole',
+        name: 'codRol',
         type: 'int'
     })
     id_rol: number
