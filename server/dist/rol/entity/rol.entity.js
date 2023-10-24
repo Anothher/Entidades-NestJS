@@ -16,7 +16,7 @@ let RolEntity = class RolEntity {
 exports.RolEntity = RolEntity;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)({
-        name: 'codRole',
+        name: 'codRol',
         type: 'int'
     }),
     __metadata("design:type", Number)
