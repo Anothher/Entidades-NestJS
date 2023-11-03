@@ -1,14 +1,15 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { FilmEntity } from "src/film/entity/film.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('tbl_filmServer')
 
-export class FilserverEntity {
+export class FilmserverEntity {
 
     @PrimaryGeneratedColumn({
         name: 'codFilmServer',
         type: 'int'
     })
-    Id_FilmServer: string
+    Id_FilmServer: number
 
     @Column({
         name: 'name',
@@ -33,4 +34,7 @@ export class FilserverEntity {
         length: 10
     })
     audio: string
+
+    @ManyToOne(() => FilmEntity, (film: FilmEntity) => film.filmServer, {"cascade": true})
+    film: FilmEntity
 }

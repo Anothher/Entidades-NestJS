@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { PhotoEntity } from "src/photo/entity/photo.entity";
+import { ProfileEntity } from "src/profile/entity/profile.entity";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('tbl_category')
 export class CategoryEntity{
@@ -24,4 +26,9 @@ export class CategoryEntity{
         length: 200
     })
     descripcion: string
+
+    @OneToOne(() => PhotoEntity,(photo: PhotoEntity) => photo.id_photo, {"cascade": true})
+    @JoinColumn({ name: 'codPhoto'})
+    photo: PhotoEntity
+    
 }

@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { UserEntity } from "src/user/entity/user.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('tbl_rol')
 export class RolEntity {
@@ -16,4 +17,7 @@ export class RolEntity {
         length: '200'
     })
     descripcion: string
+
+    @ManyToOne(() => UserEntity, (userEntity: UserEntity) => userEntity.rol, {"cascade": true})
+    userEntity: UserEntity
 }
